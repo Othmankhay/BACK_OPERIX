@@ -1,4 +1,4 @@
 package com.stellantis.operix.entity;
 
-public class Utilisateurs {
+public interface LocalDataTime {
 }
