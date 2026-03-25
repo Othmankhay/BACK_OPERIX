@@ -25,7 +25,24 @@ public class SuiviLogistique {
     private StatutLogistique statut;
 
 
+    public Object getQuantiteEcheancee() {
+    }
 
+    public Object getQuantiteLivree() {
+    }
 
+    public Object getDateEcheance() {
+    }
 
+    public Object isFauxManquant() {
+    }
+
+    public Object isEscaladeProjet() {
+    }
+
+    public Object getStatutQualite() {
+    }
+
+    public Object getStatutBl() {
+    }
 }

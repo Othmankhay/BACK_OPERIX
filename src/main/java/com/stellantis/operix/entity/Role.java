@@ -23,7 +23,7 @@ public class Role {
     private String nom;
     private String description;
 
-    @Column(ColumnDefinition = jsonb)
+    @Column(columnDefinition = "jsonb")
 
     private String permissions;
     private LocalDataTime createdAt;

@@ -1,4 +1,17 @@
 package com.stellantis.operix.repository;
 
-public interface NotificationRepository {
+import com.sun.nio.sctp.Notification;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface NotificationRepository
+        extends JpaRepository<Notification, Integer> {
+    List<Notification>
+    findByDestinataireIdAndLueFalseOrderByCreatedAtDesc(
+            Integer destinataireId);
+    long countByDestinataireIdAndLueFalse(
+            Integer destinataireId);
 }
