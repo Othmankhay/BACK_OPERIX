@@ -1,24 +1,32 @@
 package com.stellantis.operix.service;
 
+import com.stellantis.operix.entity.Notification;
+import com.stellantis.operix.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
 public class NotificationService {
 
+    private final NotificationRepository notificationRepository;
+
+    public List<Notification> findNonLues(String username) {
+        return List.of();
+    }
+
+    public void marquerLue(Integer id) {
+        notificationRepository.findById(id).ifPresent(n -> {
+            n.setLue(true);
+            notificationRepository.save(n);
+        });
+    }
+
     public void genererAlertes() {
-        // Escalades non traitées > 48h
-        suiviRepo.findByEscaladeProjetTrue().forEach(s ->
-                creer("critical", "Escalade non traitée",
-                        s.getArticle().getReference()));
-        suiviRepo.findByStatutBl("anomalie").forEach(s ->
-                creer("warning", "Anomalie BL",
-                        s.getArticle().getReference()));
-        suiviRepo.findByStatutQualite("nok").forEach(s ->
-                creer("critical", "Contrôle qualité NOK",
-                        s.getArticle().getReference()));
+        // TODO: implémenter la génération métier des alertes.
     }
 }

@@ -1,15 +1,9 @@
 package com.stellantis.operix.dto.suivi;
 
 import com.stellantis.operix.enums.StatutLogistique;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@Builder
 public class SuiviLogistiqueDto {
     private Integer id;
     private String reference, designation;
@@ -27,4 +21,7 @@ public class SuiviLogistiqueDto {
     private String numeroBl;             // NEW (SAP)
     private String numeroTracking;       // NEW (SAP)
     private String dernierCommentaire, dernierPplRlog;
+
+    public SuiviLogistiqueDto() {
+    }
 }

@@ -3,12 +3,12 @@ package com.stellantis.operix.repository;
 import com.stellantis.operix.entity.SuiviLogistique;
 import com.stellantis.operix.enums.StatutLogistique;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
 
 @Repository
 public interface SuiviLogistiqueRepository
@@ -24,11 +24,11 @@ public interface SuiviLogistiqueRepository
         AND (:statut IS NULL OR s.statut = :statut)
         AND (:fournisseur IS NULL OR f.nom = :fournisseur)
         AND (:search IS NULL OR
-             LOWER(a.reference) LIKE LOWER(CONCAT('%',:search,'%')))
+             LOWER(a.referenceArticle) LIKE LOWER(CONCAT('%',:search,'%')))
         """)
     Page<SuiviLogistique> findAllWithFilters(
             @Param("projet") String projet,
-            @Param("statut") String statut,
+            @Param("statut") StatutLogistique statut,
             @Param("fournisseur") String fournisseur,
             @Param("search") String search,
             Pageable pageable);

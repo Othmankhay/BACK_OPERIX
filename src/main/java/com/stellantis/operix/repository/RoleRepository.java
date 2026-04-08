@@ -1,6 +1,6 @@
 package com.stellantis.operix.repository;
 
-import org.apache.catalina.Role;
+import com.stellantis.operix.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

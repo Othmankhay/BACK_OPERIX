@@ -3,7 +3,7 @@ package com.stellantis.operix.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
@@ -19,7 +19,7 @@ public class Import {
     private String fichierNom, statut;
     private Integer lignesImportees, lignesErreur;
     private String description;
-    @Column(columnDefinition = "jsonb")
+    @Lob
     private String logDetails;
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")

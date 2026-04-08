@@ -1,12 +1,7 @@
 package com.stellantis.operix.dto.suivi;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 public class SuiviFilterDto {
     private String projet;
     private String sousProjet;
@@ -14,4 +9,20 @@ public class SuiviFilterDto {
     private String fournisseur;
     private String search;
     private LocalDateTime since;
+
+    public String getProjet() {
+        return projet;
+    }
+
+    public String getStatut() {
+        return statut;
+    }
+
+    public String getFournisseur() {
+        return fournisseur;
+    }
+
+    public String getSearch() {
+        return search;
+    }
 }

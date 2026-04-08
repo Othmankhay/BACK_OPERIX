@@ -1,6 +1,7 @@
 package com.stellantis.operix.controller;
 
 import com.stellantis.operix.entity.Notification;
+import com.stellantis.operix.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,6 +14,8 @@ import java.util.List;
 @RequestMapping("/api/notifications")
 @RequiredArgsConstructor
 public class NotificationController {
+    private final NotificationService notifService;
+
     @GetMapping
     public ResponseEntity<List<Notification>> findAll(
             @AuthenticationPrincipal UserDetails user) {

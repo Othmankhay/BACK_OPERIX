@@ -1,6 +1,6 @@
 package com.stellantis.operix.repository;
 
-import com.sun.nio.sctp.Notification;
+import com.stellantis.operix.entity.Notification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

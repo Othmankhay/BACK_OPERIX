@@ -1,10 +1,9 @@
 package com.stellantis.operix.entity;
-
+import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -21,8 +20,10 @@ public class Article {
     @GeneratedValue(strategy = IDENTITY)
 
     private Integer id;
+    @Column(name = "reference_article", unique = true)
+    private String referenceArticle;
     @Column(unique = true)
-    private String references,referenceSap,designation;
+    private String referenceSap, designation;
     private String domaine, serie, ru, affaire,magasin;
     @ManyToOne
     @JoinColumn(name = "fournisseur_id")
