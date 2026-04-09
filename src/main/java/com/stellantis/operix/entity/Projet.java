@@ -20,7 +20,8 @@ public class Projet {
     @GeneratedValue(strategy = IDENTITY)
     private Integer id;
     @Column(unique = true)
-    private String code, nom;
+    private String code;
+    private String nom;
     private String description;
     private Boolean actif = true;
     private LocalDateTime createdAt;

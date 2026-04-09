@@ -20,7 +20,9 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 public abstract class Utilisateur implements UserDetails {
     @Id @GeneratedValue(strategy = IDENTITY)
     private Integer id;
-    private String nom, prenom;
+    private String nom;
+    private String prenom;
+
     @Column(unique = true)
     private String email;
     private String motDePasse;

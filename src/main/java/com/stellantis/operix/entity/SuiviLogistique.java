@@ -32,6 +32,7 @@ public class SuiviLogistique {
     private String numeroBl;
     private String numeroTracking;
 
+
     public Integer getId() {
         return id;
     }
